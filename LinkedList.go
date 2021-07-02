@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println("hello...")
 	l := ll.LinkedList{}
-	fmt.Println(l)
+	l.Print()
 }
