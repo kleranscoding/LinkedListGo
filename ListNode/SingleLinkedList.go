@@ -29,5 +29,19 @@ func (l *LinkedList) Print() {
 }
 
 func (l *LinkedList) Insert(val int) {
-	// TODO: insert a node to LinkedList
+	// TODO: insert a new node at tail
+
+	// create a new node
+	n := &Node {
+		val: val,
+	}
+	// check if head is empty
+	if (l.head == nil) {
+		l.head = n
+	} else {
+		l.tail.next = n
+	}
+	// set tail to new node and increment size
+	l.tail = n
+	l.size++
 }
