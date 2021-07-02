@@ -29,8 +29,6 @@ func (l *LinkedList) Print() {
 }
 
 func (l *LinkedList) Insert(val int) {
-	// TODO: insert a new node at tail
-
 	// create a new node
 	n := &Node {
 		val: val,
@@ -44,4 +42,20 @@ func (l *LinkedList) Insert(val int) {
 	// set tail to new node and increment size
 	l.tail = n
 	l.size++
+}
+
+func (l *LinkedList) Search(val int) int {
+	// search for val and return the index if not -1
+	curr, index := l.head, 0
+	if curr == nil {
+		return -1
+	}
+	for curr != nil {
+		if curr.val == val {
+			return index
+		}
+		curr = curr.next
+		index++
+	}
+	return -1
 }
